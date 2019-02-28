@@ -149,13 +149,12 @@ class NumMatrix
         if(row == 0)
             return;
         int col = matrix[0].size();
-        /*
         this->matrix.resize(row);
         for (int i = 0; i < row; i++)
         {
-            matrix[i].resize(col);
-        }*/
-        this->matrix = vector<vector<int>>(row, vector<int>(col, 0));
+            this ->matrix[i].resize(col);
+        }/*
+        this->matrix = vector<vector<int>>(row, vector<int>(col, 0));*/
         int cnt = 0;
         for (int i = 0; i < row; i++)
         {
