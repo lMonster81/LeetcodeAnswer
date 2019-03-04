@@ -43,6 +43,7 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "string": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "vector": "cpp"
     },
 }
