@@ -15,7 +15,7 @@
 #include <vector>
 using namespace std;
 
-class Solution
+/*class Solution
 {
   public:
     int majorityElement(vector<int> &nums)
@@ -30,5 +30,48 @@ class Solution
             }
         }
         return 0;
+    }
+};*/
+/*
+class Solution
+{
+  public:
+    int majorityElement(vector<int> &nums)
+    {
+        sort(nums.begin(), nums.end());
+        return nums[nums.size() / 2];
+    }
+};*/
+
+class Solution
+{
+  public:
+    int majorityElement(vector<int> &nums)
+    {
+        int temp = -1;
+        int count = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if(count == 0)
+            {
+                temp = nums[i];
+                count = 1;
+            }
+            else
+            {
+                if(temp == nums[i])
+                {
+                    count++;
+                }
+                else
+                {
+                    count--;
+                }
+                
+            }
+            
+            
+        }
+        return temp;
     }
 };
