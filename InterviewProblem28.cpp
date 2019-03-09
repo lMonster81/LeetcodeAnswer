@@ -27,5 +27,9 @@ class Solution
         {
             _max = max(nums[i], _max);
         }
+        for (int i = k; i < nums.size(); i++)
+        {
+            
+        }
     }
 };

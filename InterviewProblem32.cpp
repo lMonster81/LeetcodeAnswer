@@ -18,11 +18,15 @@ using namespace std;
 class Solution
 {
   public:
-    int kthSmallest(vector<vector<int>> &matrix, int k)
+    int titleToNumber(string s)
     {
-        int row = matrix.size();
-        map<int, bool> visit;
-        int cnt = 0;
-        
+        if(s.size() == 0)
+            return 0;
+        int ans = 0;
+        for (int i = 0; i < s.size(); i++)
+        {
+            ans = (s[i] - 'A' + 1) + ans * 26;
+        }
+        return ans;
     }
 };
