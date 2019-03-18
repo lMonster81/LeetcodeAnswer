@@ -44,6 +44,8 @@
         "utility": "cpp",
         "string": "cpp",
         "cstring": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "bitset": "cpp",
+        "unordered_map": "cpp"
     },
 }

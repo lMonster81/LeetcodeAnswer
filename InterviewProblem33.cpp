@@ -14,7 +14,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-
+/*
 class Solution
 {
   public:
@@ -35,6 +35,34 @@ class Solution
             for (int j = 0; j < len; j++)
             {
                 ans += save1[-C[i] - D[j]];
+            }
+        }
+        return ans;
+    }
+};
+*/
+class Solution
+{
+  public:
+    int fourSumCount(vector<int> &A, vector<int> &B, vector<int> &C, vector<int> &D)
+    {
+        int len = A.size();
+        map<int, int> save1;
+        map<int, int> save2;
+        int ans = 0;
+        for (int i = 0; i < len; i++)
+        {
+            for (int j = 0; j < len; j++)
+            {
+                save1[A[i] + B[j]]++;
+                save2[C[i] + D[j]]++;
+            }
+        }
+        for (auto a : save2)
+        {
+            if(save1[-a.first])
+            {
+                ans += a.second * save1[-a.first];
             }
         }
         return ans;

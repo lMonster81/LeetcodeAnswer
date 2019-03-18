@@ -13,39 +13,47 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
+#include<unordered_map>
 using namespace std;
 
 class RandomizedSet
 {
-    int size = 0;
-    map<int, bool> hash;
-
   public:
+    unordered_map<int, bool> hashmap;
     RandomizedSet()
     {
     }
 
     bool insert(int val)
     {
-        if(hash[val])
+        if (hashmap[val])
             return false;
-        hash[val] = true;
-        size++;
+        hashmap[val] = true;
         return true;
     }
 
     bool remove(int val)
     {
-        if(!hash[val])
-            return false;
-        hash.erase(val);
-        size--;
-        return true;
+        if (hashmap.count(val))
+        {
+            hashmap.erase(val);
+            return true;
+        }
+        return false;
     }
 
     int getRandom()
     {
-        int x = rand() % size;
-        return hash.at(x);
+        if (hashmap.size() == 0)
+            return -1;
+        int x = rand() % hashmap.size();
+        int cnt = 0;
+        for (auto i : hashmap)
+        {
+            if (cnt == x)
+                return i.first;
+            cnt++;
+        }
+        return -1;
     }
 };
