@@ -47,6 +47,7 @@
         "vector": "cpp",
         "bitset": "cpp",
         "unordered_map": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "set": "cpp"
     },
 }

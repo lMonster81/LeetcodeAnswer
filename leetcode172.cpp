@@ -25,7 +25,7 @@ class Solution
         while(n)
         {
             n /= 5;
-            res += n;
+            res +=  n;
         }
         return res;
     }
