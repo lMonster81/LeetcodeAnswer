@@ -44,7 +44,7 @@ class Solution
                 int cnt = 0;
                 for (int k = 0; k < n; k++)
                 {
-                    if (wordList[i][k] != wordList[i][k])
+                    if (wordList[i][k] != wordList[j][k])
                         cnt++;
                 }
                 if (cnt == 1)
@@ -55,8 +55,9 @@ class Solution
             }
         }
         queue<string> q;
+        q.push(endWord);
         map<string, bool> visit;
-        visit[beginWord] = true;
+        visit[endWord] = true;
         int ans = 0;
         while(!q.empty())
         {
@@ -71,9 +72,9 @@ class Solution
                 end = mm.upper_bound(temp);
                 for (it = beg; it != end; it++)
                 {
-                    if((*it).second == endWord)
+                    if((*it).second == beginWord)
                     {
-                        return ans;
+                        return ans + 1;
                     }
                     if (!visit[(*it).second])
                     {
@@ -86,3 +87,12 @@ class Solution
         return 0;
     }
 };
+
+int main()
+{
+    Solution s;
+    vector<string> v = {"hot", "dot", "dog", "lot", "log"};
+    cout << s.ladderLength("hit","cog",v) << endl;
+    getchar();
+    return 0;
+}
